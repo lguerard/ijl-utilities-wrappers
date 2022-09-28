@@ -19,6 +19,7 @@ public class Cellpose_SegmentImgPlusAdvanced implements Command {
     public static final String cyto2_model = "cyto2";
     public static final String cyto2_omni_model = "cyto2_omni";
     public static final String bact_omni_model = "bact_omni";
+    public statit final String bact_fluo_omni_model = "bact_fluor_omni";
 
     @Parameter
     ImagePlus imp;
@@ -44,6 +45,7 @@ public class Cellpose_SegmentImgPlusAdvanced implements Command {
             "cyto2",
             "cyto2_omni",
             "bact_omni",
+            "bact_fluor_omni",              
     }, callback = "modelchanged")
     String model;
 
