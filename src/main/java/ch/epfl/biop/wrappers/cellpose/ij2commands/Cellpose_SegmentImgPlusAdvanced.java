@@ -18,8 +18,12 @@ public class Cellpose_SegmentImgPlusAdvanced implements Command {
     public static final String cyto_model = "cyto";
     public static final String cyto2_model = "cyto2";
     public static final String cyto2_omni_model = "cyto2_omni";
-    public static final String bact_omni_model = "bact_omni";
+    public static final String bact_phase_omni_model = "bact_phase_omni";
     public static final String bact_fluo_omni_model = "bact_fluor_omni";
+    public static final String plant_omni_model = "plant_omni";
+    public static final String worm_omni_model = "worm_omni";
+    public static final String worm_bact_omni_model = "worm_bact_omni";
+    public static final String worm_high_res_omni_model = "worm_high_res_omni";
 
     @Parameter
     ImagePlus imp;
@@ -44,8 +48,12 @@ public class Cellpose_SegmentImgPlusAdvanced implements Command {
             "cyto",
             "cyto2",
             "cyto2_omni",
-            "bact_omni",
-            "bact_fluor_omni",              
+            "bact_phase_omni",
+            "bact_fluor_omni",
+            "plant_omni",
+            "worm_omni",
+            "worm_bact_omni",
+            "worm_high_res_omni",
     }, callback = "modelchanged")
     String model;
 
@@ -81,7 +89,7 @@ public class Cellpose_SegmentImgPlusAdvanced implements Command {
         if (model.equals(nuclei_model)) {
             nuclei_channel = 1;
             cyto_channel = -1;
-        } else if ((model.equals(bact_omni_model))) {
+        } else if ((model.equals(bact_phase_omni_model))) {
             cyto_channel = 1;
             nuclei_channel = -1;
         } else if ((model.equals(cyto_model)) || (model.equals(cyto2_model)) || (model.equals(cyto2_omni_model))) {
